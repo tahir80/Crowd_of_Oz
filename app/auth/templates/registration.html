@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h4 class="form">Register here</h4>
+  <div class="container form">
+    <hr>
+    <br>
+
+     {{form.hidden_tag()}}
+     <!-- form is the same instance that we passed it in the routes.py
+     when we render the registration.html -->
+     {{wtf.quick_form(form)}}
+
+  </div>
+
+{% endblock %}

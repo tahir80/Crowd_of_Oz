@@ -1,0 +1,82 @@
+html, body {height: 100%; margin: 0; padding: 0}
+h1, h2, h3, h4 { font-family: Sansita, serif }
+p, li { font-size: small }
+ul { position: relative; top: 25px; right: 7%;}
+footer{ position: absolute; width: 100%; left:0 ;bottom: 0; height: 40px }
+a h3 {position: relative; left: 10%}
+span {margin: 2px}
+.navbar-inverse { height: 5%; }
+.projects {padding: 25px; position: relative; left: 5%; width: 80%}
+.admin {padding: 25px; position: relative; left: 40px }
+.ftr {padding: 25px}
+.wrapper {position: relative; min-height: 120%;}
+.title { color: floralwhite }
+.form { height: 50%; width:70%; padding: 10px; position: relative; left: 48px}
+.form-group {width: 40%}
+.login-msg{position: relative; left: 48px}
+
+td{
+  width: 200px;
+  word-wrap: break-word;
+}
+
+/* iframe{
+    overflow:hidden;
+} */
+
+.iframe-container {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.iframe-container iframe {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+
+/* 4x3 Aspect Ratio */
+.iframe-container-4x3 {
+  padding-top: 75%;
+}
+
+.wrapper1 {
+    text-align: center;
+}
+
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 1%;
+  height: 20px;
+  background-color: #4CAF50;
+}
+
+#ten-countdown {
+    /* text-align: center; */
+    border: 5px solid #004853;
+    display:inline;
+    padding: 5px;
+    color: #004853;
+    font-family: Verdana, sans-serif, Arial;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* #chat-history-output {
+width: 600px;
+height: 400px;
+background: #fff;
+border: 1px solid #9da;
+  margin: 10px;
+  padding: 3px;
+overflow: scroll;
+} */

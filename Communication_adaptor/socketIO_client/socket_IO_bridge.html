@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Heroku SocketIO</title>
+    <meta charset="utf-8">
+    <!-- <script src="socket.io.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="oocsi-web.js"></script>
+    <script type="text/javascript" src="oocsi-web.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        var namespace = '';
+        var socket = io.connect("https://pepperanywhere.herokuapp.com:/chat");
+        OOCSI.connect("ws://oocsi.id.tue.nl/ws");
+        console.log(location.protocol + '//' + document.domain + ':' + location.port + namespace)
+        socket.on('pepper_receiver', function(data){
+          console.log(data);
+          $('#response').html('<p>'+data.message+'</p>');
+          OOCSI.send('__test123__', {sender:data.sender,message: data.message}); //OOCSI receiver
+        });
+
+        //receive data from python script
+      	OOCSI.subscribe('__test123__', receivedMessages);
+
+        function send(){
+            socket.emit('frompepper', {message : $('form textarea').val(), Name: "PEPPER"});
+            // OOCSI.send('test', {message: $('form textarea').val()});
+        }
+
+        function receivedMessages(e) {
+          // $('#response').html('<p>'+e.data.message+'</p>');
+          if(e.data.robot == 'pepper')
+          socket.emit('frompepper', {message : e.data.message, Name: "PEPPER"});
+
+          if(e.data.signal == 'signal')
+          socket.emit('user_started_speaking', {});
+
+          if(e.data.stop_speaking == 'stop_speaking')
+          socket.emit('user_stopped_speaking', {});
+        }
+    </script>
+    <style>
+        div{
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+        }
+        textarea{
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+
+    <title></title>
+  </head>
+  <body>
+    <h3>SovcketIO example!!!</h3>
+      <div class="input">
+          <form>
+              <textarea placeholder="Send a message to the server..."></textarea>
+              <button type="button" onclick="send(); return false;">Send</button>
+          </form>
+      </div>
+      <div id="response">
+      </div>
+  </body>
+</html>

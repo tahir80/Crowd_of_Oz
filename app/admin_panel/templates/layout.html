@@ -1,0 +1,91 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    {# head #}
+    {% block head %}
+        <head>
+          <title> Perry CC </title>
+          <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale = 1">
+
+          <title>Crowd Task Interface</title>
+
+          <!-- Bootstrap CSS -->
+          <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+
+          <!--  Google fonts-->
+          <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet" >
+
+          <!-- General CSS -->
+          <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" >
+
+          <!-- JS for SocketIO -->
+          <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+          <!-- JQuery -->
+          <script type="text/javascript" src="{{url_for('static', filename='js/jquery.js')}}"></script>
+
+        </head>
+    {% endblock head %}
+
+    {# body #}
+    {% block body %}
+    <body>
+    <div class="wrapper">
+        {# navigation bar #}
+        {% block navbar %}
+            <nav class="navbar navbar-inverse">
+                <div class="container">
+                    <a class="navbar navbar-text" href="{{ url_for('main.home') }}">
+                        <h3 class="title"> Perry Crowd Control </h3>
+                    </a>
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a href="{{ url_for('main.home') }}"> Home </a></li>
+                        <!-- <li><a href="{{ url_for('authentication.register_user') }}"> Register </a></li> -->
+                        <li> {% if current_user.is_authenticated %}
+                                <a href="{{ url_for('authentication.log_out_user') }}"> SignOut </a>
+                             {% else %}
+                                <a href="{{ url_for('authentication.do_the_login') }}"> SignIn </a>
+                             {% endif %}
+                        </li>
+                        <li>
+                            <a href="#">
+                                {% if current_user.is_authenticated %}
+                                    Logged-In as <b style="color: deeppink"> {{ current_user.user_name.title() }} </b>
+                                {% else %}
+                                    Not Logged-In
+                                {% endif %}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        {% endblock navbar %}
+
+        {# flash messaging #}
+        {% for message in get_flashed_messages() %}
+                <div class=" container alert alert-info">
+                    <button type="button" class="close" data-dismiss="alert"></button>
+                    {{ message }}
+                </div>
+        {% endfor %}
+
+        {# empty block for custom content #}
+        {% block content %} {% endblock content %}
+
+        {# footer #}
+        {% block footer %}
+            <footer>
+                <div class="container ftr">
+                    <hr>
+                    <p class="text-center small">Perry Crowd Control &copy;  |  2018</p>
+                </div>
+            </footer>
+        {% endblock footer %}
+
+    </div>
+    </body>
+    {% endblock body %}
+</html>

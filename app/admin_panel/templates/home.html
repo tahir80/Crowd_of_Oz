@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="container projects">
+      <div class="row">
+          {% for project in projects %}
+          <div class="col-md-4">
+          <h4>Title: {{project.project_title}}</h4>
+          <p>Desc: {{project.project_desc}}</p>
+          <p>Date Created: {{project.date_created}}</p>
+          <p> <a href="{{ url_for('main.create_task', project_id = project.id)}}">Create New Task</a> </p>
+          <p> <a href="{{ url_for('main.list_tasks', project_id = project.id)}}">See Tasks</a> </p>
+      </div>
+          {% endfor %}
+  </div>
+
+{% endblock %}

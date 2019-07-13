@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<button onclick="javascript:publish_audio();" id="audioBtn" style="height:50px;width:100px">Publish Audio</button>
+
+  <script src="https://static.opentok.com/v2.15.9/js/opentok.min.js"></script>
+
+<script type="text/javascript">
+
+    var apiKey    = {{data.OPENTOK_API_KEY}};
+    var sessionId =  {{data.OPENTOK_SESSION_ID}};
+    var token     = {{data.OPENTOK_TOKEN_ID}};
+
+ // document.getElementById('audioBtn').disabled = false;
+
+
+ function publish_audio() {
+
+   OT.checkSystemRequirements();
+
+  var session = OT.initSession(apiKey, sessionId);
+  session.connect(token, function(error) {
+    if (error) {
+      alert('Error connecting to session: ' + error.message);
+      return;
+    }
+
+    var publisherOptions = {
+     insertDefaultUI: false,
+     videoSource: null
+   };
+    var Audio_Publisher = OT.initPublisher(publisherOptions);
+    session.publish(Audio_Publisher);
+
+  });
+}
+</script>
+
+
+{% endblock %}

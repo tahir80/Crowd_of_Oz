@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Task ID</th>
+                    <th scope="col">Project ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Condition</th>
+                    <th scope="col">Target Workers</th>
+                    <th scope="col">Time Limit</th>
+                    <th scope="col">Date Created</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Clone it</th>
+                    <th scope="col">Migrate</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Make it Active</th>
+                    <th scope="col">Stop</th>
+                    <th scope="col">Expire</th>
+                    <th scope="col">Review & Pay</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for task in tasks %}
+                <tr>
+                    <td> {{task.id }} </td>
+                    <td> {{task.p_id }} </td>
+                    <td> {{ task.title }} </td>
+                    <td> {{ task.Instructions }}</td>
+                    <td> {{ task.max_active + task.max_waiting}} </td>
+                    <td> {{task.time_limit / 60 }} min.</td>
+                    <td> {{ task.date_created }} </td>
+                    <td> {{ task.task_status }} </td>
+                    <td> <a href="{{ url_for('main.cloning', task_id=task.id, project_id=task.p_id) }}"> Clone it </a></td>
+                    <td> <a href="{{ url_for('main.migrate_workers', task_id=task.id, project_id=task.p_id) }}"> Migrate Workers </a></td>
+                    <td> <a href="#">Delete</a></td>
+                    <td> <a href="{{ url_for('main.edit_task', task_id=task.id, project_id=task.p_id) }}">Edit</a> </td>
+                    <td> <a href="{{ url_for('main.postTask', task_id=task.id) }}"> Make it Live </a></td>
+                    <td><button type="button" class="btn btn-primary" onclick="stop_task();">STOP</button></td>
+                    <td><button type="button" class="btn btn-primary" onclick="expireHIT({{task.id}});">Expire HIT</button></td>
+                    <td><a href="{{ url_for('main.payments', task_id = task.id)}}">Review and pay</a> </td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <script type="text/javascript" src="{{url_for('static', filename='js/admin_tasks.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,153 @@
+{% extends 'layout_main.html' %} {% block content %}
+
+<div id="AMT_submit_active">
+  <!-- <img src="{{ url_for('static', filename='img/submit_button.JPG') }}" id="AMT_button" alt="Click here to submit the task"> -->
+
+  <div id="end-dialog-message" title="Ready to submit?">
+  </div>
+  <form id="endForm" action="{{ name.amazon_host }}" method="POST">
+    <input type="hidden" id="user-input" value="" name="user-input" />
+    <input type="hidden" id="assignmentId" value="{{ name.assignment_id }}" name="assignmentId" />
+    <input type="hidden" id="workerId" value="{{ name.worker_id }}" name="workerId" />
+    <input type="hidden" id="hitId" value="{{ name.hit_id }}" name="hitId" />
+  </form>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <!-- Colomn for submit task -->
+
+    <!-- colomn for score board -->
+    <div class="col-lg-12" class="card card-body">
+
+      <table style="width:100%" border="1">
+        <tr bgcolor="#99cc00">
+          <td text-align: left;><b>Waiting Stage:</b></td>
+          <td text-align: left;>waited: {{name.time_waited}}</td>
+          <td text-align: left;>Fix Reward: {{name.fix_price}}</td>
+          <td text-align: left;>Bonus Earned: {{name.reward}}</td>
+        </tr>
+        <tr bgcolor="#dddddd">
+          <td rowspan="2" text-align: left;><b>Working Stage:</b></td>
+          <td text-align: left;> Total Messages: <span id="total_msgs"></td>
+    <td text-align: left;>Selected Messages: <span id="selected_msgs"></td>
+    <td text-align: left;>Work-based Bonus: <span id="total_bonus"> $</td>
+  </tr>
+  <tr bgcolor="#dddddd">
+    <td text-align: left;>Time Elapsed: </td>
+    <td text-align: left;><span id="timer"></td>
+    <td text-align: left;><span style="display:none" id="reward"></td>
+  </tr>
+</table>
+
+</div>
+</div>
+<div class="row">
+
+  <div class="col-lg-6">
+        <!-- VIDEO VIEW DIV -->
+        <div id="video-view">
+
+          <div id="screen-subscriber"></div>
+          <div id="audio-subscriber"> </div>
+
+          <script src="https://static.opentok.com/v2.15.9/js/opentok.min.js"></script>
+
+          <script type="text/javascript">
+            // Go to https://dashboard.tokbox.com/ to get your OpenTok API Key and to generate
+            // a test session ID and token:
+            var apiKey    = {{name.OPENTOK_API_KEY}};
+            var sessionId =  {{name.OPENTOK_SESSION_ID}};
+            var token     = {{name.OPENTOK_TOKEN_ID}};
+
+            // intiate the session with tokbox
+            var session = OT.initSession(apiKey, sessionId);
+
+            //connect to tokbox API
+            session.connect(token, function(error) {
+              if (error) {
+                alert('Error connecting to session: ' + error.message);
+                return;
+              }
+            });
+
+            //subscibed to screen
+            session.on('streamCreated', function(event) {
+              console.log("New stream in the session: " + event.stream.streamId);
+              if (event.stream.videoType === 'screen') {
+                // This is a screen-sharing stream published by another client
+                var subOptions = {
+                  // width: event.stream.videoDimensions.width ,
+                  // height: event.stream.videoDimensions.height
+                  width: '100%',
+                  height: 450
+                };
+                // session.subscribe(event.stream, 'screen-subscriber', {width: '100%', height: '100%', insertMode: 'append'});
+                session.subscribe(event.stream, 'screen-subscriber', subOptions);
+
+              }
+
+              //subscibe to Audio channel
+              var subscriberOptions = '';
+              if (event.stream.hasAudio) {
+                subscriberOptions = {
+                  insertDefaultUI: false
+                };
+
+                $('#play_sound').on('click', function() {
+                  session.subscribe(event.stream, subscriberOptions);
+                });
+
+                // subscriber.setStyle('backgroundImageURI',  "{{url_for('static', filename='img/white_image.png')}}");
+              }
+            });
+          </script>
+
+
+        </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="container clearfix">
+        <div class="chat">
+          <div class="chat-history">
+            <ul> </ul>
+          </div>
+
+          <div class="chat-message clearfix">
+            <textarea name="message-to-send" id="message-to-send" placeholder="Type your response here (Please help the student to plan his/her trip. This is the live chat!)" rows="3"></textarea>
+               <div id="myBar"></div>
+            <button id='send'>Send</button>
+            <button id="start" class="btn btn-success">SPEECH TO TEXT(Click me each time to convert your speech to text)</button>
+
+          </div>
+          <!-- end chat-message -->
+        </div>
+        <!-- end chat -->
+      </div>
+    </div>
+
+  <br>
+
+</div>
+<div class="row">
+  <div class="d-flex justify-content-center">
+    <div class="col-lg-6" class="card card-body">
+        <button type="button" class="btn btn-danger btn-lg btn-block" id="play_sound">PLAY AUDIO</button>
+    </div>
+
+    <div class="col-lg-6" class="card card-body">
+      <section id="submit_task_active">
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="submit_task">SUBMIT THIS TASK?</button>
+      </section>
+    </div>
+
+  </div>
+</div>
+</div>
+<!-- End of container -->
+
+
+
+
+{% endblock %}

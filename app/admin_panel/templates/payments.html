@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<h4>total bonus: {{total_bonus}}</h4>
+<table class="table">
+<tr>
+
+    <th scope="col">Worker ID</th>
+    <th scope="col">MTurk ID</th>
+    <th scope="col">Assign ID</th>
+    <th scope="col">HIT ID</th>
+    <th scope="col">Fixed Price</th>
+    <th scope="col">Total Bonus</th>
+    <th scope="col">Total Waiting Time</th>
+    <th scope="col">Total Active Time</th>
+    <th scope="col">Session ID</th>
+    <th scope="col">Task ID</th>
+    <th scope="col">Total Messages</th>
+    <th scope="col">Selected Messages</th>
+    <th scope="col">Status</th>
+    <th scope="col">Actions</th>
+</tr>
+
+{% for result in data %}
+     <tr>
+     <td>{{ result[0] }}</td>
+     <td>{{ result[1] }}</td>
+     <td>{{ result[2] }}</td>
+     <td>{{ result[3] }}</td>
+     <td>{{ result[4] }}</td>
+     <td>{{ result[5] }}</td>
+     <td>{{ result[6] }}</td>
+     <td>{{ result[7] }}</td>
+     <td>{{ result[8] }}</td>
+     <td>{{ result[9] }}</td>
+     <td>{{ result[10] }}</td>
+     <td>{{ result[11] }}</td>
+     <td>{{ result[12] }}</td>
+     <assign_id>/<worker_id>/<bonus>/<session_id>
+     <td> <a href="{{ url_for('main.approve', assign_id=result[2], worker_id=result[1], bonus=result[5], session_id=result[8], task_id=result[9]) }}"> Approve</a> <br>
+     <a href="{{ url_for('main.reject', assign_id=result[2], session_id=result[8], task_id=result[9]) }}"> Reject</a>
+   </td>
+
+ </tr>
+{% endfor %}
+</table>
+{% endblock %}

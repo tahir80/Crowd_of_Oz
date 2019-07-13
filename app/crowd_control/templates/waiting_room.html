@@ -1,0 +1,111 @@
+{% extends 'layout_crowd.html' %} {% block content %}
+
+<div id="AMT_submit_waiting">
+  <!-- <img src="{{ url_for('static', filename='img/submit_button.JPG') }}" id="AMT_button" alt="Click here to submit the task"> -->
+
+  <div id="end-dialog-message" title="Ready to submit?">
+  </div>
+  <form id="endForm" action="{{ name.amazon_host }}" method="POST">
+    <input type="hidden" id="user-input" value="" name="user-input" />
+    <input type="hidden" id="assignmentId" value="{{ name.assignment_id }}" name="assignmentId" />
+    <input type="hidden" id="workerId" value="{{ name.worker_id }}" name="workerId" />
+    <input type="hidden" id="hitId" value="{{ name.hit_id }}" name="hitId" />
+  </form>
+</div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-12" class="card card-body">
+      <h2 align="center">Waiting Room</h2>
+      <section id="instructions">
+        <div id="demo" class="collapse in">
+
+          <button type="button" class="btn btn-info">WRITE YOUR OWN INSTRUCTIONS HERE</button> <br>
+
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Hide Instructions</button>
+
+</div>
+</div>
+
+  <div class="row">
+      <div class="col-lg-4" class="">
+        <section id="submit_task_waiting">
+          <h4>Want to submit this task? </h4>
+          <button type="button" class="btn btn-primary" id="submit_task">Click here</button>
+        </section>
+      </div>
+    <div class="col-lg-8" style="border:1px solid black">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 align="center">Score Board</h3>
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4" style=" text-align: center;">
+            <h4>Time Elapsed: <span id="timer"></span>
+            </h4>
+          </div>
+          <div class="col-lg-4">
+            <h4 align="center">Dynamic Reward: <span id="reward"></span>$ </h4>
+          </div>
+          <div class="col-lg-4">
+            <h4 align="center">Fix Reward: <span id="fix_reward">{{name.fix_price}}$</span> </h4>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <hr>
+    <div class="col-lg-12">
+      <h4>on-going chat</h4>
+      <section id="chat_waiting_room">
+        <textarea id="chat" cols="80" style="overflow-y: scroll; height: 300px; resize: none;" readonly></textarea>
+      </section>
+    </div>
+    <!-- <div class="col-lg-6">
+      <h4>Summary of Conversation</h4>
+      <section id="Summary">
+        <textarea cols="80" style="overflow-y: scroll; height: 300px; resize: none;"> NO Summary available yet
+          </textarea>
+      </section>
+    </div> -->
+  </div>
+  <div class="row">
+    <hr>
+    <div class="col-lg-12">
+      <section id="status_waiting">
+        <h4 align="center">We are currently hiring other workers. Please be patient, you will be paid while waiting</h4>
+        <h3 align="center"><span id="worker_count"></span></h3>
+      </section>
+    </div>
+  </div>
+<!-- <button type="button" onclick="voting();">Click here</button> -->
+  <!-- <div class="row">
+    <hr>
+    <div class="col-lg-12">
+      <section id="Start_task">
+       <button type="button" class="btn btn-primary btn-lg btn-block" id="start_task_button">Let's Start the Task...</button>
+      </section>
+    </div>
+  </div> -->
+</div>
+
+<script type="text/javascript" src="{{url_for('static', filename='js/timer.js')}}"></script>
+
+<script type="text/javascript" src="{{url_for('static', filename='js/waiting_room.js')}}"></script>
+
+
+
+<!-- <script type="text/javascript">
+  $(window).on('beforeunload', function(){
+      socket.close();
+  });
+</script> -->
+
+<!-- </script> -->
+
+{% endblock %}
