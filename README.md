@@ -34,3 +34,12 @@ Then simply type: ```python run.py ```
 2. To create a new project: http://127.0.0.1:5000/create_project
 3. See waiting sample page: http://127.0.0.1:5000/waiting_room
 4. See main task sample page: http://127.0.0.1:5000/main_task
+
+## Admin Controls
+In addition to managing workers in the active and waiting queue, we have also provided basic admin controls for;
+1. Creating a new project
+2. Creating a HIT/task on Amazon Mechanical Turk (MTurk)
+3. Stopping a current job manually --> this will auto-submit HITs from all workers
+4. Expiring a HIT 
+5. Migrating workers manually if needed from waiting to active queue
+
