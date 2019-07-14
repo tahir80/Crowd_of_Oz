@@ -5,7 +5,7 @@ This repository contains the implementation of Crowd of Oz (CoZ) -- a crowd powe
 ![OverviewDiagram1](https://user-images.githubusercontent.com/7135544/61186487-40781f80-a666-11e9-9394-685daccaaae9.jpg)
 
 # Local Installation
-Uncomment the following code from run.py containing in the root folder. Make sure that ***create_app*** contains 'dev' as an argument. For production settings, change this to 'prod'
+First install all dependencies in requirements.txt file and then Uncomment the following code from run.py containing in the root folder. Make sure that ***create_app*** contains 'dev' as an argument. For production settings, change this to 'prod'
 ```python
 #--------local testing----------------
 if __name__ == "__main__":
