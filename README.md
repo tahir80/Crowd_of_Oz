@@ -57,6 +57,7 @@ git commit -am "make it better"
 git push heroku master
 ```
 9. you can open the website using heroku open or use provided url after successful installtion
+10. Do not forget to replace the values of OpenTOK, IBM Watson (if you want to use Speech to text on crowd interfaces) and Amazon Mechanical Turk Setting
 
 ```python
 ############OPENTOK credentials#########################
