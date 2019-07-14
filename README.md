@@ -58,3 +58,24 @@ git push heroku master
 ```
 9. you can open the website using heroku open or use provided url after successful installtion
 
+```python
+############OPENTOK credentials#########################
+OPENTOK_API_KEY = 'YOUR_OWN_API_KEY'
+OPENTOK_SESSION_ID = 'YOUR_OWN_SESSION_ID'
+OPENTOK_TOKEN_ID = 'YOUR_OWN_TOKEN_ID'
+##########################################################
+
+
+############IBM watson credentials#########################
+STT_USERNAME = "YOUR_OWN_STT_USERNAME"
+STT_PASSWORD = "YOUR OWN_STT_PASSWORD"
+STT_APIKEY = "YOUR_OWN_STT_APIKEY"
+STT_URL = "YOUR_OWN_STT_URL"
+##########################################################
+
+
+##########Amazon Mechanical Turk Settings################################
+AWS_ACCESS_KEY_ID = "YOUR_OWN_AWS_ACCESS_KEY_ID"
+AWS_SECRET_ACCESS_KEY = "YOUR_OWN_AWS_SECRET_ACCESS_KEY"
+
+```
