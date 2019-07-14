@@ -14,6 +14,7 @@ if __name__ == "__main__":
 Then simply type: ```python run.py ```
 
 1. To register yourself as Admin: http://127.0.0.1:5000/register
+* abc
 2. To create a new project: http://127.0.0.1:5000/create_project
 3. See waiting sample page: http://127.0.0.1:5000/waiting_room
 4. See main task sample page: http://127.0.0.1:5000/main_task
