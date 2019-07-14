@@ -4,6 +4,8 @@ This repository contains the implementation of Crowd of Oz (CoZ) -- a crowd powe
 
 ![OverviewDiagram1](https://user-images.githubusercontent.com/7135544/61186487-40781f80-a666-11e9-9394-685daccaaae9.jpg)
 
+**You can find the Media Manager from App folder and Communication adaptor is located in the root folder. Crowd_control is also located in the app folder**
+
 ## Pavilion Algorithm
 The Pavilion algorithm handles asynchronous arrival/departure of crowd workers from MTurk.com in the waiting and active queue for enabling real-time crowdsourcing (RTC)
 ### Introduction
