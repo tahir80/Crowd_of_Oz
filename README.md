@@ -83,3 +83,13 @@ AWS_ACCESS_KEY_ID = "YOUR_OWN_AWS_ACCESS_KEY_ID"
 AWS_SECRET_ACCESS_KEY = "YOUR_OWN_AWS_SECRET_ACCESS_KEY"
 
 ```
+## AMAZON S3 storage
+1. login to AWS console (https://aws.amazon.com/console/)
+2. select Amazon S3 from storage
+3. click on create new bucket
+4. click next --> in manage users page, select 'public read acces' becuase Heroku needs to access our Database
+5. when you click on the bucket name, it will lead you to a page where you can add files
+6. upload **"local_db.backup"** --> it is inside the root folder
+7. click on the uploaded file --> copy the link and go to console again
+8. type this: heroku pg:backups:restore "https://s3.eu-central-1.amazonaws.com/mybookcatalogdatabase/local_db.backup"
+9. once done, restart the service using : heroku restart
