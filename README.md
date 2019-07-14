@@ -87,9 +87,11 @@ AWS_SECRET_ACCESS_KEY = "YOUR_OWN_AWS_SECRET_ACCESS_KEY"
 1. login to AWS console (https://aws.amazon.com/console/)
 2. select Amazon S3 from storage
 3. click on create new bucket
-4. click next --> in manage users page, select 'public read acces' becuase Heroku needs to access our Database
-5. when you click on the bucket name, it will lead you to a page where you can add files
-6. upload **"local_db.backup"** --> it is inside the root folder
-7. click on the uploaded file --> copy the link and go to console again
-8. type this: heroku pg:backups:restore "https://s3.eu-central-1.amazonaws.com/mybookcatalogdatabase/local_db.backup"
-9. once done, restart the service using : heroku restart
+4. In the name and region section, give your bucket a unique name and select the appropriate region.Click next
+5. Leave the configure options as default. Click next
+6. In the set permissions section, under ***Manage System permissions*** select Grant Amazon S3 Log Delivery group write access to this bucket
+7. when you click on the bucket name, it will lead you to a page where you can add files
+8. upload **"local_db.backup"** --> it is inside the root folder
+9. click on the uploaded file --> copy the link and go to console again
+10. type this: heroku pg:backups:restore "YOUR COPIED LINK"
+11. once done, restart the service using : heroku restart
