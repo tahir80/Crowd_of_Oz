@@ -95,3 +95,6 @@ AWS_SECRET_ACCESS_KEY = "YOUR_OWN_AWS_SECRET_ACCESS_KEY"
 9. click on the uploaded file --> copy the link and go to console again
 10. type this: heroku pg:backups:restore "YOUR COPIED LINK"
 11. once done, restart the service using : heroku restart
+
+### Database Model
+
