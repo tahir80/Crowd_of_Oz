@@ -57,7 +57,7 @@ git commit -am "make it better"
 git push heroku master
 ```
 9. you can open the website using heroku open or use provided url after successful installtion
-10. Do not forget to replace the values of OpenTOK, IBM Watson (if you want to use Speech to text on crowd interfaces) and Amazon Mechanical Turk Setting
+10. Do not forget to replace the values of OpenTOK, IBM Watson (if you want to use Speech to text on crowd interfaces) and Amazon Mechanical Turk Settings from ```__init__``` file from the root folder
   * For openTOK visit here: https://tokbox.com/
   * For IBM watson Speech to text visit here: https://www.ibm.com/watson/services/speech-to-text/
   * For Amazon Mechanical Turk settings and Boto3 framework visit here: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mturk.html
