@@ -1,12 +1,12 @@
 # Crowd of Oz
 This repository contains the implementation of Crowd of Oz (CoZ) -- a crowd powered conversational assistant for the Pepper robot. CoZ helps to recruits crowd-workers as tele-operators to control the social behaviors of the robot. CoZ achieves this by providing media rich interfaces to assist crowd-workers to contextualize the conversation and defining pavilion algorithm to sustain crowd workers by analyzing turnover conditions, e.g. when workers return, submit and abandon our task.
-# System Diagram
+## System Diagram
 
 ![OverviewDiagram1](https://user-images.githubusercontent.com/7135544/61186487-40781f80-a666-11e9-9394-685daccaaae9.jpg)
 
-# Pavilion
+## Pavilion Algorithm
 The Pavilion algorithm handles asynchronous arrival/departure of crowd workers from MTurk.com in the waiting and active queue for enabling real-time crowdsourcing (RTC)
-## Introduction
+### Introduction
 Pavilion tries to retain workers in the active queue -- a queue which contains workers who are engaged with the task-- in addition to waiting queue based on turnover conditions (e.g. when workers leave the task either from the waiting or active queue). A worker can leave the task either when she submits a task, returns it, or abandons it.
 Following conditions are handled in Pavilion:
 1) When worker leaves from waiting queue by submitting Human Intelligence Task (HIT) --> Pavilion hires a new worker
@@ -14,7 +14,7 @@ Following conditions are handled in Pavilion:
 3) When worker leaves from the active queue by returning HIT --> Pavilion moves worker from waiting to the active queue
 4) When worker leaves from the waiting queue by returning HIT --> NONE
 
-# Local Installation
+## Local Installation
 First install all dependencies in requirements.txt file and then Uncomment the following code from run.py containing in the root folder. Make sure that ***create_app*** contains 'dev' as an argument. For production settings, change this to 'prod'
 ```python
 #--------local testing----------------
