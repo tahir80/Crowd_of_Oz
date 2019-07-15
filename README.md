@@ -12,13 +12,9 @@ This repository contains the implementation of Crowd of Oz (CoZ) -- a crowd powe
 
 ## How it Works?
 1. create a new project by opening the create_project page
-2. After creating a project, you will see a link ***Create New Task*** on the home page. Click this link to create a new task or HIT.
-3. After that, click on the ***See Tasks*** from the home page and click it.
-4. You will see the option ***Make it Live***. Click it to post the job to Amazon Mechanical Turk. Do not forget to replace the values of OpenTOK, IBM Watson (if you want to use Speech to text on crowd interfaces) and Amazon Mechanical Turk Settings from ```__init__``` file from the root folder
-  * For openTOK visit here: https://tokbox.com/
-  * For IBM watson Speech to text visit here: https://www.ibm.com/watson/services/speech-to-text/
-  * For Amazon Mechanical Turk settings and Boto3 framework visit here: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mturk.html
-
+2. After creating the project, you will see a link ***Create New Task*** on the home page. Click this link to create a new task or HIT.
+3. After that, click on the ***See Tasks*** from the home page.
+4. You will see the option ***Make it Live***. Click it to post the job to the Amazon Mechanical Turk. Do not forget to replace the values of OpenTOK, IBM Watson (if you want to use Speech to text on crowd interfaces) and Amazon Mechanical Turk Settings from ```__init__``` file from the root folder
 ```python
 ############OPENTOK credentials#########################
 OPENTOK_API_KEY = 'YOUR_OWN_API_KEY'
@@ -40,17 +36,19 @@ AWS_ACCESS_KEY_ID = "YOUR_OWN_AWS_ACCESS_KEY_ID"
 AWS_SECRET_ACCESS_KEY = "YOUR_OWN_AWS_SECRET_ACCESS_KEY"
 
 ```
-
+  * For openTOK visit here: https://tokbox.com/
+  * For IBM watson Speech to text visit here: https://www.ibm.com/watson/services/speech-to-text/
+  * For Amazon Mechanical Turk settings and Boto3 framework visit here: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mturk.html
 
 5. First, you need to run all scripts in a Windows/Mac or linux based PC. This PC will act as a middleware between your robot and flask based web server as shown in the diagram.
 6. Please provide the IP address of the robot where asked.
-7. For Google speech to text script located in Crowd-of-Oz\Communication_adaptor\Google_Speech_to_text, you need to provide your own credentials in the Google.py file. To run the Google speech to text service, please run module_speechrecognition.py. Give credit and thanks to: https://github.com/JBramauer/pepperspeechrecognition
+7. For Google speech to text script located in the Crowd-of-Oz\Communication_adaptor\Google_Speech_to_text, you need to provide your own credentials in the Google.py file. To run the Google speech to text service, please run the module_speechrecognition.py. Give credit and thanks to: https://github.com/JBramauer/pepperspeechrecognition
 8. In the OOCSI folder located at Crowd-of-Oz\Communication_adaptor\OOCSI, please run the main.py. Give credit and thanks to: https://github.com/iddi/oocsi-python
 9. From SocketIO client, please run the socket_IO_bridge.html and leave it open in the browser.
 10. If you have already deployed your web application as explained the section: ***Installation on Heroku***, then please intall chrome or firefox browser extension in order to run the audio and video publishers. The instructions on how to install the browser extension is available here: https://github.com/opentok/screensharing-extensions. 
-11. Also install and run the Choregraph (based on operating system) and make sure that it is running. For installation of Choregraph, follow this link: http://doc.aldebaran.com/2-4/dev/community_software.html. Also, make sure that camera view is displayed on the main interface. You need to broadcast camera view from the Choregraph application to the crowd workers.
+11. Also install and run the Choregraph (based on operating system) and make sure that it is running. For installation of Choregraph, follow this link: http://doc.aldebaran.com/2-4/dev/community_software.html. Also, make sure that camera view is displayed on the main interface of the Choregraph. You need to broadcast camera view from the Choregraph application to the crowd workers.
 12. After that, open web pages ***publish_video*** and ***publish_audio***. For publishing video click on the ***Share your screen*** and select the Choregraph's application camera view.
-13. At the end of the conversational task, you have to manually click the STOP button from the ***see tasks*** link. This operation will make sure that HIT from all crowd worker is submitted automatically. Please inform this to your potential workers beforehand. After few seconds, do not forget to click on the ***Expire HIT***. This operation will make sure that no other new workers accept this HIT.
+13. At the end of the conversational task, you have to manually click the STOP button from the ***see tasks*** link. This operation will make sure that HIT from all crowd worker is submitted automatically. Please inform this to your potential workers beforehand in the instructions. After few seconds, do not forget to click on the ***Expire HIT***. This operation will make sure that no other new workers accept this HIT.
 14. Finally, review and pay the crowd workers.
 15. Do not forget to stop all scripts including audio and video publishers running on the Middleware.
 
