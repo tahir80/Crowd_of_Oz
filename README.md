@@ -10,6 +10,46 @@ This repository contains the implementation of Crowd of Oz (CoZ) -- a crowd powe
 
 **You can find the Media Manager from App folder and Communication adaptor is located in the root folder. Crowd_control is also located in the app folder**
 
+## How it Works?
+1. create a new project by opening the create_project page
+2. After creating a project, you will see a link ***Create New Task*** on the home page. Click this link to create a new task or HIT.
+3. After that, click on the ***See Tasks*** from the home page and click it.
+4. You will see the option ***Make it Live***. Click it to post the job to Amazon Mechanical Turk. Do not forget to replace the values of OpenTOK, IBM Watson (if you want to use Speech to text on crowd interfaces) and Amazon Mechanical Turk Settings from ```__init__``` file from the root folder
+  * For openTOK visit here: https://tokbox.com/
+  * For IBM watson Speech to text visit here: https://www.ibm.com/watson/services/speech-to-text/
+  * For Amazon Mechanical Turk settings and Boto3 framework visit here: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mturk.html
+
+```python
+############OPENTOK credentials#########################
+OPENTOK_API_KEY = 'YOUR_OWN_API_KEY'
+OPENTOK_SESSION_ID = 'YOUR_OWN_SESSION_ID'
+OPENTOK_TOKEN_ID = 'YOUR_OWN_TOKEN_ID'
+##########################################################
+
+
+############IBM watson credentials#########################
+STT_USERNAME = "YOUR_OWN_STT_USERNAME"
+STT_PASSWORD = "YOUR OWN_STT_PASSWORD"
+STT_APIKEY = "YOUR_OWN_STT_APIKEY"
+STT_URL = "YOUR_OWN_STT_URL"
+##########################################################
+
+
+##########Amazon Mechanical Turk Settings################################
+AWS_ACCESS_KEY_ID = "YOUR_OWN_AWS_ACCESS_KEY_ID"
+AWS_SECRET_ACCESS_KEY = "YOUR_OWN_AWS_SECRET_ACCESS_KEY"
+
+```
+
+
+5. First, you need to run all scripts in a Windows/Mac or linux based PC. This PC will act as a middleware betwen your robot and flask based web server as shown in the diagram.
+6. Please provide the IP address of the robot where asked.
+7. For Google speech to text script located in Crowd-of-Oz\Communication_adaptor\Google_Speech_to_text, you need to provide your own credentials in the Google.py file. To run the Google speech to text service, please run module_speechrecognition.py.
+8. In the OOCSI folder located at Crowd-of-Oz\Communication_adaptor\OOCSI, please run the main.py
+9. From SocketIO client, please run the socket_IO_bridge.html and leave it open in the browser.
+10. If you have already deployed your web application as explained the section: ***Installation on Heroku***, then please intall chrome or firfox browser extension in order to run the audio and video publishers. The instructions on how to install browser extension is available here: https://github.com/opentok/screensharing-extensions. After that, open web pages ***publish_video*** and ***publish_audio***. For publishing video click on the ***Share your screen***.
+
+
 ## Pavilion Algorithm
 The Pavilion algorithm handles asynchronous arrival/departure of crowd workers from MTurk.com in the waiting and active queue for enabling real-time crowdsourcing (RTC)
 ### Introduction
@@ -61,32 +101,7 @@ git commit -am "make it better"
 git push heroku master
 ```
 9. you can open the website using heroku open or use provided url after successful installtion
-10. Do not forget to replace the values of OpenTOK, IBM Watson (if you want to use Speech to text on crowd interfaces) and Amazon Mechanical Turk Settings from ```__init__``` file from the root folder
-  * For openTOK visit here: https://tokbox.com/
-  * For IBM watson Speech to text visit here: https://www.ibm.com/watson/services/speech-to-text/
-  * For Amazon Mechanical Turk settings and Boto3 framework visit here: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mturk.html
 
-```python
-############OPENTOK credentials#########################
-OPENTOK_API_KEY = 'YOUR_OWN_API_KEY'
-OPENTOK_SESSION_ID = 'YOUR_OWN_SESSION_ID'
-OPENTOK_TOKEN_ID = 'YOUR_OWN_TOKEN_ID'
-##########################################################
-
-
-############IBM watson credentials#########################
-STT_USERNAME = "YOUR_OWN_STT_USERNAME"
-STT_PASSWORD = "YOUR OWN_STT_PASSWORD"
-STT_APIKEY = "YOUR_OWN_STT_APIKEY"
-STT_URL = "YOUR_OWN_STT_URL"
-##########################################################
-
-
-##########Amazon Mechanical Turk Settings################################
-AWS_ACCESS_KEY_ID = "YOUR_OWN_AWS_ACCESS_KEY_ID"
-AWS_SECRET_ACCESS_KEY = "YOUR_OWN_AWS_SECRET_ACCESS_KEY"
-
-```
 ## AMAZON S3 storage
 1. login to AWS console (https://aws.amazon.com/console/)
 2. select Amazon S3 from storage
