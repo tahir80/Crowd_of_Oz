@@ -51,6 +51,8 @@ AWS_SECRET_ACCESS_KEY = "YOUR_OWN_AWS_SECRET_ACCESS_KEY"
 11. Also install and run the Choregraph (based on operating system) and make sure that it is running. For installation of Choregraph, follow this link: http://doc.aldebaran.com/2-4/dev/community_software.html. Also, make sure that camera view is displayed on the main interface. You need to broadcast camera view from the Choregraph application to the crowd workers.
 12. After that, open web pages ***publish_video*** and ***publish_audio***. For publishing video click on the ***Share your screen*** and select the Choregraph's application camera view.
 13. At the end of the conversational task, you have to manually click the STOP button from the ***see tasks*** link. After few seconds, do not forget to click on the ***Expire HIT***. This operation will make sure that no other new workers accept this HIT.
+14. Finally, review and pay the crowd workers.
+15. Do not forget the stop all scripts including audio and video publishers running on Middleware.
 
 
 ## Pavilion Algorithm
