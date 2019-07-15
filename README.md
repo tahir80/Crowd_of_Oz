@@ -52,7 +52,7 @@ AWS_SECRET_ACCESS_KEY = "YOUR_OWN_AWS_SECRET_ACCESS_KEY"
 12. After that, open web pages ***publish_video*** and ***publish_audio***. For publishing video click on the ***Share your screen*** and select the Choregraph's application camera view.
 13. At the end of the conversational task, you have to manually click the STOP button from the ***see tasks*** link. This operation will make sure that HIT from all crowd worker is submitted automatically. Please inform this to your potential workers beforehand. After few seconds, do not forget to click on the ***Expire HIT***. This operation will make sure that no other new workers accept this HIT.
 14. Finally, review and pay the crowd workers.
-15. Do not forget the stop all scripts including audio and video publishers running on Middleware.
+15. Do not forget to stop all scripts including audio and video publishers running on the Middleware.
 
 
 ## Pavilion Algorithm
