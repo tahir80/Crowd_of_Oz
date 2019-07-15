@@ -52,7 +52,7 @@ AWS_SECRET_ACCESS_KEY = "YOUR_OWN_AWS_SECRET_ACCESS_KEY"
 14. Finally, review and pay the crowd workers.
 15. Do not forget to stop all scripts including audio and video publishers running on the Middleware.
 
-***Note: The main logic of CoZ is located in app --> Crowd_control --> events.py***  please also see the static --> js folder for client side logic. 
+***Note: The main logic of CoZ is located in app --> Crowd_control --> events.py***. please also see the static --> js folder for client side logic. 
 
 
 ## Pavilion Algorithm
