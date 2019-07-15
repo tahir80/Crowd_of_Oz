@@ -42,7 +42,7 @@ AWS_SECRET_ACCESS_KEY = "YOUR_OWN_AWS_SECRET_ACCESS_KEY"
 ```
 
 
-5. First, you need to run all scripts in a Windows/Mac or linux based PC. This PC will act as a middleware betwen your robot and flask based web server as shown in the diagram.
+5. First, you need to run all scripts in a Windows/Mac or linux based PC. This PC will act as a middleware between your robot and flask based web server as shown in the diagram.
 6. Please provide the IP address of the robot where asked.
 7. For Google speech to text script located in Crowd-of-Oz\Communication_adaptor\Google_Speech_to_text, you need to provide your own credentials in the Google.py file. To run the Google speech to text service, please run module_speechrecognition.py. Give credit and thanks to: https://github.com/JBramauer/pepperspeechrecognition
 8. In the OOCSI folder located at Crowd-of-Oz\Communication_adaptor\OOCSI, please run the main.py. Give credit and thanks to: https://github.com/iddi/oocsi-python
