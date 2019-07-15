@@ -47,7 +47,8 @@ AWS_SECRET_ACCESS_KEY = "YOUR_OWN_AWS_SECRET_ACCESS_KEY"
 7. For Google speech to text script located in Crowd-of-Oz\Communication_adaptor\Google_Speech_to_text, you need to provide your own credentials in the Google.py file. To run the Google speech to text service, please run module_speechrecognition.py.
 8. In the OOCSI folder located at Crowd-of-Oz\Communication_adaptor\OOCSI, please run the main.py
 9. From SocketIO client, please run the socket_IO_bridge.html and leave it open in the browser.
-10. If you have already deployed your web application as explained the section: ***Installation on Heroku***, then please intall chrome or firefox browser extension in order to run the audio and video publishers. The instructions on how to install the browser extension is available here: https://github.com/opentok/screensharing-extensions. After that, open web pages ***publish_video*** and ***publish_audio***. For publishing video click on the ***Share your screen***.
+10. If you have already deployed your web application as explained the section: ***Installation on Heroku***, then please intall chrome or firefox browser extension in order to run the audio and video publishers. The instructions on how to install the browser extension is available here: https://github.com/opentok/screensharing-extensions. 
+11. After that, open web pages ***publish_video*** and ***publish_audio***. For publishing video click on the ***Share your screen***.
 
 
 ## Pavilion Algorithm
