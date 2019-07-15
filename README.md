@@ -48,7 +48,8 @@ AWS_SECRET_ACCESS_KEY = "YOUR_OWN_AWS_SECRET_ACCESS_KEY"
 8. In the OOCSI folder located at Crowd-of-Oz\Communication_adaptor\OOCSI, please run the main.py
 9. From SocketIO client, please run the socket_IO_bridge.html and leave it open in the browser.
 10. If you have already deployed your web application as explained the section: ***Installation on Heroku***, then please intall chrome or firefox browser extension in order to run the audio and video publishers. The instructions on how to install the browser extension is available here: https://github.com/opentok/screensharing-extensions. 
-11. After that, open web pages ***publish_video*** and ***publish_audio***. For publishing video click on the ***Share your screen***.
+11. Also install and run the Choregraph (based on operating system) and make sure that it is running. Also, make sure that robot view and camera view are displayed on the main interface. You need to broadcast camera view from the Choregraph application to the crowd workers.
+12. After that, open web pages ***publish_video*** and ***publish_audio***. For publishing video click on the ***Share your screen*** and select the Choregraph's application camera view.
 
 
 ## Pavilion Algorithm
