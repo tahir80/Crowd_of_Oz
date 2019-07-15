@@ -45,7 +45,7 @@ AWS_SECRET_ACCESS_KEY = "YOUR_OWN_AWS_SECRET_ACCESS_KEY"
 5. First, you need to run all scripts in a Windows/Mac or linux based PC. This PC will act as a middleware betwen your robot and flask based web server as shown in the diagram.
 6. Please provide the IP address of the robot where asked.
 7. For Google speech to text script located in Crowd-of-Oz\Communication_adaptor\Google_Speech_to_text, you need to provide your own credentials in the Google.py file. To run the Google speech to text service, please run module_speechrecognition.py. Give credit and thanks to: https://github.com/JBramauer/pepperspeechrecognition
-8. In the OOCSI folder located at Crowd-of-Oz\Communication_adaptor\OOCSI, please run the main.py
+8. In the OOCSI folder located at Crowd-of-Oz\Communication_adaptor\OOCSI, please run the main.py. Give credit and thanks to: https://github.com/iddi/oocsi-python
 9. From SocketIO client, please run the socket_IO_bridge.html and leave it open in the browser.
 10. If you have already deployed your web application as explained the section: ***Installation on Heroku***, then please intall chrome or firefox browser extension in order to run the audio and video publishers. The instructions on how to install the browser extension is available here: https://github.com/opentok/screensharing-extensions. 
 11. Also install and run the Choregraph (based on operating system) and make sure that it is running. For installation of Choregraph, follow this link: http://doc.aldebaran.com/2-4/dev/community_software.html. Also, make sure that camera view is displayed on the main interface. You need to broadcast camera view from the Choregraph application to the crowd workers.
