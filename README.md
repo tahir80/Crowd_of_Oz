@@ -115,3 +115,5 @@ git push heroku master
 
 ### Database Model
 
+## License
+This code pattern is licensed under the MIT License. Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses.
