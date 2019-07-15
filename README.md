@@ -50,6 +50,7 @@ AWS_SECRET_ACCESS_KEY = "YOUR_OWN_AWS_SECRET_ACCESS_KEY"
 10. If you have already deployed your web application as explained the section: ***Installation on Heroku***, then please intall chrome or firefox browser extension in order to run the audio and video publishers. The instructions on how to install the browser extension is available here: https://github.com/opentok/screensharing-extensions. 
 11. Also install and run the Choregraph (based on operating system) and make sure that it is running. For installation of Choregraph, follow this link: http://doc.aldebaran.com/2-4/dev/community_software.html. Also, make sure that camera view is displayed on the main interface. You need to broadcast camera view from the Choregraph application to the crowd workers.
 12. After that, open web pages ***publish_video*** and ***publish_audio***. For publishing video click on the ***Share your screen*** and select the Choregraph's application camera view.
+13. At the end of the conversational task, you have to manually click the STOP button from the ***see tasks*** link. After few seconds, do not forget to click on the ***Expire HIT***. This operation will make sure that no other new workers accept this HIT.
 
 
 ## Pavilion Algorithm
