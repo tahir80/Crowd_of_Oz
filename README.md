@@ -14,7 +14,7 @@ This repository contains the implementation of Crowd of Oz (CoZ) -- a crowd powe
 1. create a new project by opening the create_project page
 2. After creating the project, you will see a link ***Create New Task*** on the home page. Click this link to create a new task or HIT.
 3. After that, click on the ***See Tasks*** from the home page.
-4. You will see the option ***Make it Live***. Click it to post the job to the Amazon Mechanical Turk. Do not forget to replace the values of OpenTOK, IBM Watson (if you want to use Speech to text on crowd interfaces) and Amazon Mechanical Turk Settings from ```__init__``` file from the root folder
+4. You will see the option ***Make it Live***. Click it to post the job to the Amazon Mechanical Turk. Do not forget to replace the values of OpenTOK, IBM Watson (if you want to use Speech to text on crowd interfaces) and Amazon Mechanical Turk Settings in the ```__init__``` file from the root folder
 ```python
 ############OPENTOK credentials#########################
 OPENTOK_API_KEY = 'YOUR_OWN_API_KEY'
