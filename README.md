@@ -66,7 +66,7 @@ Following conditions are handled in Pavilion:
 4) When worker leaves from the waiting queue by returning HIT --> NONE
 
 ## Local Installation
-First install all dependencies in requirements.txt file and then Uncomment the following code from run.py containing in the root folder. Make sure that ***create_app*** contains 'dev' as an argument. For production settings, change this to 'prod'
+First install all dependencies in requirements.txt file and then uncomment the following code from run.py containing in the root folder. Make sure that ***create_app*** contains 'dev' as an argument. For production settings, change this to 'prod'
 ```python
 #--------local testing----------------
 if __name__ == "__main__":
