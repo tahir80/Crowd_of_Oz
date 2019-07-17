@@ -3,7 +3,7 @@
 [![Flask-SocketIO](https://img.shields.io/badge/Flask--socketIO-1.0.2-red.svg)](https://flask-socketio.readthedocs.io/en/latest/)
 [![Python](https://img.shields.io/badge/Python-3.7-blue.svg)](https://www.python.org/downloads/)
 [![boto3](https://img.shields.io/badge/Boto3-1.9.42-orange.svg)](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mturk.html)
-[![openTOK](https://img.shields.io/badge/openTOK-WebRTC-brightgreen.svg)](https://tokbox.com/)
+[![openTOK](https://img.shields.io/badge/OpenTok-WebRTC-brightgreen.svg)](https://tokbox.com/)
 
 
 
