@@ -113,7 +113,7 @@ git push heroku master
 10. type this: heroku pg:backups:restore "YOUR COPIED LINK"
 11. once done, restart the service using : heroku restart
 
-### Database Model
+### Simplified ERD Model
 <img width="791" alt="ERD_Model" src="https://user-images.githubusercontent.com/7135544/61370381-916c5b80-a892-11e9-8964-befe49c5409f.png">
 
 ## License
