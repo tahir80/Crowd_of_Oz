@@ -114,6 +114,7 @@ git push heroku master
 11. once done, restart the service using : heroku restart
 
 ### Database Model
+<img width="791" alt="ERD_Model" src="https://user-images.githubusercontent.com/7135544/61370381-916c5b80-a892-11e9-8964-befe49c5409f.png">
 
 ## License
 This code pattern is licensed under the MIT License. Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses.
