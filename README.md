@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![Flask-SocketIO](https://img.shields.io/badge/Flask-SocketIO-blue.svg)](https://flask-socketio.readthedocs.io/en/latest/)
+[![Flask-SocketIO](https://img.shields.io/badge/Flask--socketIO-1.0.2-red.svg)](https://flask-socketio.readthedocs.io/en/latest/)
 
 # Crowd of Oz
 This repository contains the implementation of Crowd of Oz (CoZ) -- a crowd powered conversational assistant for the Pepper robot. CoZ helps to recruits crowd-workers as tele-operators to control the social behaviors of the robot. CoZ achieves this by providing media rich interfaces to assist crowd-workers to contextualize the conversation and defining pavilion algorithm to sustain crowd workers by analyzing turnover conditions, e.g. when workers return, submit and abandon our task.
