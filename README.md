@@ -86,9 +86,9 @@ Then simply type: ```python run.py ```
 
 ## Installation on Heroku
 1. clone our project and set it up in local git repository.
-2. Sign up for Heroku
-3. download and install Heroku CLI
-4. create an app first, give it a unique name
+2. Sign up for Heroku: https://signup.heroku.com/identity
+3. download and install Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli#download-and-install
+4. create an app first, give it a unique name: https://dashboard.heroku.com
 5. then create a database --> click on resources tab under your newly created app --> search postgres --> and add hobby-dev (it's free)
 6. click on your database name -->click on settings -->credentials --> you can copy the URI to the prod.py file but its NOT RECOMMENDED, you don't need to do anything. Everything is setup in prod.py under config folder.
 7. now come back to console and type: heroku login
