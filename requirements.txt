@@ -57,4 +57,4 @@ Flask-Script==2.0.6
 Flask-Migrate==2.3.0
 boto3==1.9.42
 gevent-websocket==0.10.1
-Flask-Cors==3.0.7
+Flask-Cors==3.0.9
