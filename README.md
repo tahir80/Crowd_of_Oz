@@ -15,7 +15,7 @@ This repository contains the implementation of Crowd of Oz (CoZ) — a crowd-pow
 
 **You can find the Media Manager in the App folder and the Communication adaptor is located in the root folder. Crowd_control is also located in the app folder**
 
-## How it Works?
+## How does it work?
 1. Create a new project by opening the create_project page
 2. After creating the project, you will see a link ***Create New Task*** on the home page. Click this link to create a new task or HIT.
 3. After that, click on the ***See Tasks*** from the home page.
