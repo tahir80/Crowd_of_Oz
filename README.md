@@ -13,7 +13,7 @@ This repository contains the implementation of Crowd of Oz (CoZ) — a crowd-pow
 
 ![system_diagram](https://user-images.githubusercontent.com/7135544/61368091-67fd0100-a88d-11e9-8428-042ed0ec0fec.png)
 
-**You can find the Media Manager in the App folder and the Communication adaptor is located in the root folder. Crowd_control is also located in the app folder**
+<>**You can find the Media Manager in the App folder and the Communication adaptor is located in the root folder. Crowd_control is also located in the app folder**
 
 ## How does it work?
 1. Create a new project by opening the create_project page
