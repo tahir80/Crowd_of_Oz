@@ -13,7 +13,7 @@ This repository contains the implementation of Crowd of Oz (CoZ) — a crowd-pow
 
 ![system_diagram](https://user-images.githubusercontent.com/7135544/61368091-67fd0100-a88d-11e9-8428-042ed0ec0fec.png)
 
-To learn more about the system diagram, please refer to this paper: https://www.sciencedirect.com/science/article/pii/S2352711019302699
+To learn more about the system diagram, please refer to this paper: [SoftwareX paper]( https://www.sciencedirect.com/science/article/pii/S2352711019302699)
 
 ## How does it work?
 1. Create a new project by opening the create_project page
